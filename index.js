@@ -29,9 +29,9 @@ const states = {
 
 function render(state){
     root.innerHTML =`
-    ${Header(state.header)}
-    ${Navigation(state.nav)}
-    ${Content(state.boox)}
+    ${Header(state)}
+    ${Navigation(state)}
+    ${Content(state)}
     `;
 }
 

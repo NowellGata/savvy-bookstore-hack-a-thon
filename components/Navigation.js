@@ -1,8 +1,8 @@
-export default function(navState) {
+export default function(state) {
   return `<nav>
     <ul>
-      <li>${navState.links[0]}</li>
-      <li>${navState.links[1]}</li>
+      <li>${state.nav.links[0]}</li>
+      <li>${state.nav.links[1]}</li>
     </ul>
   </nav>`
 }

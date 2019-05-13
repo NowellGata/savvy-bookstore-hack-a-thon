@@ -1,9 +1,9 @@
 import Book from "./Book"
 
-export default function(booxState) {
+export default function(state) {
   return `
     <figure>
-      ${Book(booxState[0])}
+      ${Book(state.boox[0])}
     </figure>
   `
 }

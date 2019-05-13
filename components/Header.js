@@ -1,3 +1,3 @@
-export default function (headState) {
-  return `<h1>${headState.title}</h1>`
+export default function (state) {
+  return `<h1>${state.header.title}</h1>`
 }
