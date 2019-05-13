@@ -39,3 +39,26 @@ function render(state){
 }
 
 render(states);
+
+document
+    .querySelector('form')
+    .addEventListener(
+        'submit',
+        (event) => {
+            event.preventDefault();
+            const data = event.target.elements;
+            const newProduct = {
+                'name': data[0].value,
+                'author': data[1].value,
+                'pictureURL': data[2].value,
+                'price': data[3].value,
+                
+                // TODO: Resolve this.
+                'sellingPoints': []
+            };
+
+            states.boox.push(newProduct);
+
+            render(states);
+        }
+    );

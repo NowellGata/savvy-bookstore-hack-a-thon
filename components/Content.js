@@ -1,9 +1,18 @@
 import Book from "./Book"
 
+function processBooks(books) {
+  let booksHTML = "";
+  
+  books.forEach(book => {
+    booksHTML += Book(book)
+  })
+  return booksHTML;
+}
+
 export default function(state) {
   return `
     <figure>
-      ${Book(state.boox[0])}
+      ${processBooks(state.boox)}
     </figure>
   `
 }
