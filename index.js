@@ -2,7 +2,7 @@ import Navigation from "./components/Navigation";
 
 const root = document.querySelector('#root');
 
-const state = {
+const states = {
     nav: {
         links: ['Books', 'Albums']
     }
@@ -14,4 +14,4 @@ function render(state){
     `;
 }
 
-render(state);
+render(states);
