@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Navigation from "./components/Navigation";
 import Content from "./components/Content";
+import Form from "./components/Form"
 
 const root = document.querySelector('#root');
 
@@ -28,10 +29,12 @@ const states = {
 }
 
 function render(state){
+    // Form is 'dumb.'
     root.innerHTML =`
     ${Header(state)}
     ${Navigation(state)}
     ${Content(state)}
+    ${Form()}
     `;
 }
 
