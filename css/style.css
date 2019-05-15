@@ -51,6 +51,7 @@ img {
   justify-content: space-around;
   max-width: 200px;
   max-height: auto;
+  border: 2px black dotted;
 }
 
 figcaption {
