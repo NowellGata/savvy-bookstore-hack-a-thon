@@ -3,8 +3,8 @@ import Navigation from './components/Navigation';
 import Content from './components/Content';
 import Form from '/components/Form';
 import Footer from './components/Footer';
-const root = document.querySelector('#root');
 
+const root = document.querySelector('#root');
 const states = {
     'header': {
         'title': 'Amagone Book Store',
