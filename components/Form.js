@@ -1,4 +1,4 @@
-export default (state) => `
+export default () => `
 <form action="#">
   <span>
     <label for="title">Book Title</label>
