@@ -1,9 +1,9 @@
 export default (state) => `
-    <img src=${state.pictureURL} alt="Photo wuz here">
-    <figcaption>${state.name} - ${state.author} - ${state.price}</figcaption>
+    <img src=${state.image} alt="Photo wuz here">
+    <figcaption>${state.title} - ${state.creator} - ${state.price}</figcaption>
     <ul>
-        <li>${state.sellingPoints[0]}</li>
-        <li>${state.sellingPoints[1]}</li>
-        <li>${state.sellingPoints[2]}</li>
+        <li>${state.selling_points[0]}</li>
+        <li>${state.selling_points[1]}</li>
+        <li>${state.selling_points[2]}</li>
     </ul>
 `;
