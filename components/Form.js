@@ -24,7 +24,7 @@ export default (state) => `
     <input type="number" id="price" placeholder="Price" />
   </div>
   <div>
-    <label for="selling-points"> Add Three Selling Points Separated Using Commas, <br> It'll Behoove You to Do so </label>
+    <label for="selling-points"> Add Selling Points Separated Using Commas, <br> It'll Behoove You to Do so </label>
     <textarea
       id="selling-points"
       cols="30"
