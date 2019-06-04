@@ -56,7 +56,7 @@ document
                 'price': data[3].value,
 
                 // we'll learn how to handle sellingPoints next
-                'sellingPoints': [],
+                'sellingPoints': data[4].value.split(',')
             };
 
             // TODO: Update newProduct to have a value assigned to 🔑 of 'id' that is 1 more than the value in the previous 📖.
