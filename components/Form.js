@@ -1,18 +1,18 @@
 export default (state) => `
 <form action="#">
   <span>
-    <label for="name">Book Title</label>
-    <input type="text" id="name" placeholder="Book Title" />
+    <label for="title">Book Title</label>
+    <input type="text" id="title" placeholder="Book Title" />
   </span>
   <span>
-    <label for="author">Author</label>
-    <input type="text" id="author" placeholder="Author" />
+    <label for="creator">Author</label>
+    <input type="text" id="creator" placeholder="Author" />
   </span>
   <div>
-    <label for="picture-url">URL</label>
+    <label for="image">URL</label>
     <input
       type="url"
-      id="picture-url"
+      id="image"
       placeholder="https://example.com"
       pattern="https://.*"
       size="30"
@@ -24,9 +24,9 @@ export default (state) => `
     <input type="number" id="price" placeholder="Price" />
   </div>
   <div>
-    <label for="selling-points"> Add Selling Points Separated Using Commas, <br> It'll Behoove You to Do so </label>
+    <label for="selling_points">Selling Points</label>
     <textarea
-      id="selling-points"
+      id="selling_points"
       cols="30"
       rows="10"
     ></textarea>
