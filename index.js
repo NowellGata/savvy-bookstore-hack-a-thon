@@ -15,12 +15,12 @@ const states = {
     'books': [
         {
             'id': 1,
-            'name': 'Lasagna: A Retrospective',
-            'author': 'Garfield',
-            'pictureURL':
+            'title': 'Lasagna: A Retrospective',
+            'creator': 'Garfield',
+            'image':
         'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
             'price': 24,
-            'sellingPoints': [
+            'selling_points': [
                 'Lasagna is delicious.',
                 'The essential guide to Italian casseroles of all types.',
                 "Real G's move silent, like Lasagna. -Lil Wayne"
@@ -50,13 +50,13 @@ document
             event.preventDefault();
             const data = event.target.elements;
             const newProduct = {
-                'name': data[0].value,
-                'author': data[1].value,
-                'pictureURL': data[2].value,
+                'title': data[0].value,
+                'creator': data[1].value,
+                'image': data[2].value,
                 'price': data[3].value,
 
                 // we'll learn how to handle sellingPoints next
-                'sellingPoints': [],
+                'selling_points': [],
             };
 
             // TODO: Update newProduct to have a value assigned to 🔑 of 'id' that is 1 more than the value in the previous 📖.
