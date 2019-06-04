@@ -54,7 +54,7 @@ function render(state) {
                 'price': data[3].value,
 
                 // we'll learn how to handle sellingPoints next
-                'selling_points': [],
+                'selling_points': data[4].value.split(',')
             };
   };
 
