@@ -27,7 +27,6 @@ const states = {
             ]
         }
     ]
-  ],
 };
 
 function render(state) {
@@ -37,7 +36,6 @@ function render(state) {
     ${Content(state)}
     ${Form()}
     ${Footer()}
-
     `;
 
   document
@@ -56,16 +54,7 @@ function render(state) {
                 // we'll learn how to handle sellingPoints next
                 'selling_points': data[4].value.split(',')
             };
-  };
-
-  // TODO: Update newProduct to have a value assigned to 🔑 of 'id' that is 1 more than the value in the previous 📖.
-
-  // states.books[length - 1].id + 1
-
-  states.books[states.books.length] = newProduct;
-
-});
-
-}
+  });
+};
 
 render(states);
