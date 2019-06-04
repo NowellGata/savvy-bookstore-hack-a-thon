@@ -1,10 +1,6 @@
-import Book from "./Book";
+import Book from './Book';
 
-function buildBooksHTML(state) {
-    let booksHTML = '';
-    
-    state.books.forEach(book => booksHTML += `<figure>${Book(book)}</figure>`);
-    
-    return booksHTML;
-    };
+function buildBooksHTML(state){
+    return state.books.map((book) => `<figure>${Book(book)}</figure>`).join(' ');
+}
 export default (states) => `${buildBooksHTML(states)}`;
