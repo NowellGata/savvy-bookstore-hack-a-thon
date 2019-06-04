@@ -1,14 +1,14 @@
-import Header from './components/Header';
-import Navigation from './components/Navigation';
-import Content from './components/Content';
-import Form from '/components/Form';
-import Footer from './components/Footer';
-const root = document.querySelector('#root');
+import Header from "./components/Header";
+import Navigation from "./components/Navigation";
+import Content from "./components/Content";
+import Form from "/components/Form";
+import Footer from "./components/Footer";
+const root = document.querySelector("#root");
 
 const states = {
-    'header': {
-        'title': 'Amagone Book Store'
-    },
+  header: {
+    title: "Amagone Book Store",
+  },
     'navigation': {
         'links': [ 'books', 'albums' ]
     },
@@ -27,10 +27,11 @@ const states = {
             ]
         }
     ]
+  ],
 };
 
-function render(state){
-    root.innerHTML = `
+function render(state) {
+  root.innerHTML = `
     ${Navigation(state)}
     ${Header(state)}
     ${Content(state)}
@@ -38,11 +39,8 @@ function render(state){
     ${Footer()}
 
     `;
-}
 
-render(states);
-
-document
+  document
     .querySelector('form')
     .addEventListener(
         'submit',
@@ -58,13 +56,16 @@ document
                 // we'll learn how to handle sellingPoints next
                 'selling_points': [],
             };
+  };
 
-            // TODO: Update newProduct to have a value assigned to 🔑 of 'id' that is 1 more than the value in the previous 📖.
+  // TODO: Update newProduct to have a value assigned to 🔑 of 'id' that is 1 more than the value in the previous 📖.
 
-            // states.books[length - 1].id + 1
+  // states.books[length - 1].id + 1
 
-            states.books[states.books.length] = newProduct;
+  states.books[states.books.length] = newProduct;
 
-            render(states);
-        }
-    );
+});
+
+}
+
+render(states);
