@@ -67,7 +67,6 @@ function render(state){
                         {}
                     );
 
-                console.log(newProduct);
                 states.books.push(newProduct);
                 render(states.books);
             }
@@ -81,6 +80,5 @@ const links = document.querySelectorAll('nav a');
 links.forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
-        console.log(e.target.textContent);
     });
 });
