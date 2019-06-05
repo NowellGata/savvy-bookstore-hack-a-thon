@@ -8,7 +8,7 @@ const root = document.querySelector('#root');
 
 const states = {
     'header': {
-        'title': 'Amagone Book Store',
+        'title': 'Amagone Products Store',
     },
     'navigation': {
         'links': [ 'books', 'albums' ],
@@ -67,8 +67,8 @@ function render(state){
                         {}
                     );
 
-                states.books.push(newProduct);
-                render(states.books);
+                states.products.books.push(newProduct);
+                render(states);
             }
         );
 }
