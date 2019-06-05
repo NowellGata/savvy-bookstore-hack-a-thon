@@ -14,24 +14,25 @@ const states = {
         'links': [ 'books', 'albums' ],
     },
     'products': {
-
-      'books': [
-        {
-            'id': 1,
-            'title': 'Lasagna: A Retrospective',
-            'creator': 'Garfield',
-            'image':
+        'books': [
+            {
+                'id': 1,
+                'title': 'Lasagna: A Retrospective',
+                'creator': 'Garfield',
+                'image':
                 'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
-            'price': 24,
-            'selling_points': [
-                'Lasagna is delicious.',
-                'The essential guide to Italian casseroles of all types.',
-                "Real G's move silent, like Lasagna. -Lil Wayne",,
-          ]
-        },
-    ],
-      'albums': []
+                'price': 24,
+                'selling_points': [
+                    'Lasagna is delicious.',
+                    'The essential guide to Italian casseroles of all types.',
+                    "Real G's move silent, like Lasagna. -Lil Wayne",
+                ]
+            }
+        ],
+
+        'albums': []
     }
+};
 
 function render(state){
     root.innerHTML = `
@@ -54,10 +55,10 @@ function render(state){
                 makeToArray
                     .reduce(
                         (product, formField) => {
-                            if(formField.name === 'sellingPoints') {
+                            if(formField.name === 'sellingPoints'){
                                 product.sellingPoints = formField.value.split(',');
                             }
-                            else {
+                            else{
                                 product[formField.name] = formField.value;
                             }
 
