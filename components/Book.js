@@ -1,9 +1,14 @@
+function buildSellingPoints(state){
+    console.log(state.selling_points);
+
+    return state.selling_points.map(
+        (sellingPoint) => `<li>${sellingPoint}</li>`
+    ).join(' ');
+}
+
 export default (state) => `
     <img src=${state.image} alt="Photo wuz here">
-    <figcaption>${state.title} - ${state.creator} - ${state.price}</figcaption>
     <ul>
-        <li>${state.selling_points[0]}</li>
-        <li>${state.selling_points[1]}</li>
-        <li>${state.selling_points[2]}</li>
+        ${buildSellingPoints(state)}
     </ul>
 `;
