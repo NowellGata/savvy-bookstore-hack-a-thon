@@ -3,14 +3,14 @@ import Navigation from './components/Navigation';
 import Content from './components/Content';
 import Form from '/components/Form';
 import Footer from './components/Footer';
-const root = document.querySelector('#root');
 
+const root = document.querySelector('#root');
 const states = {
-    "header": {
-        "title": 'Amagone Book Store',
+    'header': {
+        'title': 'Amagone Book Store',
     },
     'navigation': {
-        'links': [ 'books', 'albums' ]
+        'links': [ 'books', 'albums' ],
     },
     'books': [
         {
@@ -23,10 +23,10 @@ const states = {
             'selling_points': [
                 'Lasagna is delicious.',
                 'The essential guide to Italian casseroles of all types.',
-                "Real G's move silent, like Lasagna. -Lil Wayne"
-            ]
-        }
-    ]
+                "Real G's move silent, like Lasagna. -Lil Wayne",
+            ],
+        },
+    ],
 };
 
 function render(state){
