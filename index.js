@@ -12,8 +12,10 @@ const states = {
     'navigation': {
         'links': [ 'books', 'albums' ],
     },
+    'products':{
+
     'books': [
-        {
+      {
             'id': 1,
             'title': 'Lasagna: A Retrospective',
             'creator': 'Garfield',
@@ -23,11 +25,12 @@ const states = {
             'selling_points': [
                 'Lasagna is delicious.',
                 'The essential guide to Italian casseroles of all types.',
-                "Real G's move silent, like Lasagna. -Lil Wayne",
-            ],
-        },
+                "Real G's move silent, like Lasagna. -Lil Wayne",,
+        ]
+      },
     ],
-};
+      'albums': []
+    }
 
 function render(state){
     root.innerHTML = `
