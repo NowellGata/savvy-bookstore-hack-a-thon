@@ -12,10 +12,10 @@ const states = {
     'navigation': {
         'links': [ 'books', 'albums' ],
     },
-    'products':{
+    'products': {
 
-    'books': [
-      {
+      'books': [
+        {
             'id': 1,
             'title': 'Lasagna: A Retrospective',
             'creator': 'Garfield',
@@ -26,8 +26,8 @@ const states = {
                 'Lasagna is delicious.',
                 'The essential guide to Italian casseroles of all types.',
                 "Real G's move silent, like Lasagna. -Lil Wayne",,
-        ]
-      },
+          ]
+        },
     ],
       'albums': []
     }
@@ -47,17 +47,29 @@ function render(state){
             'submit',
             (event) => {
                 event.preventDefault();
-                const data = event.target.elements;
-                const newProduct = {
-                    'title': data[0].value,
-                    'creator': data[1].value,
-                    'image': data[2].value,
-                    'price': data[3].value,
+                const makeToArray =
+                Array.from(event.target.elements);
+                const newProduct =
+                makeToArray
+                    .reduce(
+                        (product, formField) => {
+                            if(formField.name === 'sellingPoints') {
+                                product.sellingPoints = formField.value.split(',');
+                            }
+                            else {
+                                product[formField.name] = formField.value;
+                            }
 
-                    // we'll learn how to handle sellingPoints next
-                    'selling_points': data[4].value.split(',')
-                };
-            });
+                            return product;
+                        },
+                        {}
+                    );
+
+                console.log(newProduct);
+                states.books.push(newProduct);
+                render(states.books);
+            }
+        );
 }
 
 render(states);
