@@ -5,6 +5,7 @@ import Form from '/components/Form';
 import Footer from './components/Footer';
 
 const root = document.querySelector('#root');
+
 const states = {
     'header': {
         'title': 'Amagone Book Store',
@@ -73,3 +74,12 @@ function render(state){
 }
 
 render(states);
+
+const links = document.querySelectorAll('nav a');
+
+links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log(e.target.textContent);
+    });
+});
