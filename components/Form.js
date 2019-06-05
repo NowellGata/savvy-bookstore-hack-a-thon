@@ -32,11 +32,11 @@ export default () => `
     ></textarea>
   </div>
   <div>
-    <input type="radio" id="book" name="Book" value="book" checked>
+    <input type="radio" id="book" name="type" value="book">
     <label for="book">Book</label>
   </div>
   <div>
-  <input type="radio" id="album" name="Album" value="album">
+  <input type="radio" id="album" name="type" value="album">
     <label for="album">Album</label></div>
   <div>
       <input type="submit" value="Submit!"/>
