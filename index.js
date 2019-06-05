@@ -4,34 +4,23 @@ import Content from './components/Content';
 import Form from '/components/Form';
 import Footer from './components/Footer';
 
+import axios from 'axios';
+import Book from './components/Book';
+
 const root = document.querySelector('#root');
 
 const states = {
-    'header': {
-        'title': 'Amagone Book Store',
+    "header": {
+        "title": 'Amagone Book Store',
     },
-    'navigation': {
-        'links': [ 'books', 'albums' ],
+    "navigation": {
+        "links": [ 'books', 'albums' ],
     },
-    'products': {
-        'books': [
-            {
-                'id': 1,
-                'title': 'Lasagna: A Retrospective',
-                'creator': 'Garfield',
-                'image':
-                'http://graphics8.nytimes.com/images/2015/10/15/dining/15RECIPE20DIN/15RECIPE20DIN-articleLarge.jpg',
-                'price': 24,
-                'selling_points': [
-                    'Lasagna is delicious.',
-                    'The essential guide to Italian casseroles of all types.',
-                    "Real G's move silent, like Lasagna. -Lil Wayne",
-                ]
-            }
-        ],
+    "products": {
+        "books": [],
 
-        'albums': []
-    }
+        "albums": [],
+    },
 };
 
 function render(state){
@@ -43,34 +32,23 @@ function render(state){
     ${Footer()}
     `;
 
-    document
-        .querySelector('form')
-        .addEventListener(
-            'submit',
-            (event) => {
-                event.preventDefault();
-                const makeToArray =
-                Array.from(event.target.elements);
-                const newProduct =
-                makeToArray
-                    .reduce(
-                        (product, formField) => {
-                            if(formField.name === 'sellingPoints'){
-                                product.sellingPoints = formField.value.split(',');
-                            }
-                            else{
-                                product[formField.name] = formField.value;
-                            }
-
-                            return product;
-                        },
-                        {}
-                    );
-
-                states.books.push(newProduct);
-                render(states.books);
+    document.querySelector('form').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const makeToArray = Array.from(event.target.elements);
+        const newProduct = makeToArray.reduce((product, formField) => {
+            if(formField.name === 'sellingPoints'){
+                product.sellingPoints = formField.value.split(',');
             }
-        );
+ else{
+                product[formField.name] = formField.value;
+            }
+
+            return product;
+        }, {});
+
+        states.books.push(newProduct);
+        render(states.books);
+    });
 }
 
 render(states);
@@ -81,4 +59,11 @@ links.forEach((link) => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
     });
+});
+
+axios.get('https://api.savvycoders.com/books').then((response) => {
+    states.products.books = response.data;
+});
+axios.get('https://api.savvycoders.com/albums').then((response) => {
+    states.products.albums = response.data;
 });
