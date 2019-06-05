@@ -31,7 +31,8 @@ const states = {
         ],
 
         'albums': []
-    }
+    },
+    'active': 'books',
 };
 
 function render(state){
