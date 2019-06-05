@@ -10,17 +10,17 @@ import Book from './components/Book';
 const root = document.querySelector('#root');
 
 const states = {
-    "header": {
-        "title": 'Amagone Book Store',
+       'header': {
+        'title': 'Amagone Products Store',
     },
     "navigation": {
         "links": [ 'books', 'albums' ],
     },
     "products": {
         "books": [],
-
-        "albums": [],
+        'albums': []
     },
+    'active': 'books',
 };
 
 function render(state){
@@ -32,23 +32,35 @@ function render(state){
     ${Footer()}
     `;
 
-    document.querySelector('form').addEventListener('submit', (event) => {
-        event.preventDefault();
-        const makeToArray = Array.from(event.target.elements);
-        const newProduct = makeToArray.reduce((product, formField) => {
-            if(formField.name === 'sellingPoints'){
-                product.sellingPoints = formField.value.split(',');
-            }
- else{
-                product[formField.name] = formField.value;
-            }
+    document
+        .querySelector('form')
+        .addEventListener(
+            'submit',
+            (event) => {
+                event.preventDefault();
+                const makeToArray =
+                Array.from(event.target.elements);
+                const newProduct =
+                makeToArray
+                    .reduce(
+                        (product, formField) => {
+                            if(formField.name === 'sellingPoints'){
+                                product.sellingPoints = formField.value.split(',');
+                            }
+                            else{
+                                product[formField.name] = formField.value;
+                            }
 
-            return product;
-        }, {});
+                            return product;
+                        },
+                        {}
+                    );
 
-        states.books.push(newProduct);
-        render(states.books);
-    });
+
+                states.products.books.push(newProduct);
+                render(states);
+            }
+        );
 }
 
 render(states);

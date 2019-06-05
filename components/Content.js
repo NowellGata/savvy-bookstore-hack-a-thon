@@ -1,6 +1,6 @@
-import Book from './Book';
+import Product from './Products';
 
-function buildBooksHTML(state){
-    return state.products.books.map((book) => `${Book(book)}`).join(' ');
+function buildProductsHTML(state){
+    return state.products.books.map((product) => `${Product(product)}`).join(' ');
 }
-export default (states) => `${buildBooksHTML(states)}`;
+export default (states) => `${buildProductsHTML(states)}`;
