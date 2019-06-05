@@ -1,9 +1,14 @@
+function buildNavLinks(stateLinks){
+    return stateLinks.map(
+        (link) => `<li><a href="#">${link}</a></li>`
+    ).join(' ');
+}
+
 export default function Navigation(state){
     return `
         <nav>
             <ul class="links">
-                <li><a href="#">${state.navigation.links[0]}</a></li>
-                <li><a href="#">${state.navigation.links[1]}</a></li>
+                ${buildNavLinks(state.navigation.links)}
             </ul>
         </nav>
 `;
